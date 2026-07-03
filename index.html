@@ -8,36 +8,117 @@
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             line-height: 1.6;
-            color: #000;
+            color: #111;
             background-color: #fff;
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-        h1 { border-bottom: 2px solid #000; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        h2 { margin-top: 30px; text-transform: uppercase; font-size: 1.2rem; }
+        h1 { border-bottom: 2px solid #000; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.8rem; }
+        h2 { margin-top: 30px; text-transform: uppercase; font-size: 1.2rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        p { margin-bottom: 15px; }
         .offline-badge {
-            background: #000; color: #fff; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 4px;
+            background: #000; color: #fff; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 4px; display: inline-block; margin-bottom: 15px;
         }
-        footer { margin-top: 50px; font-size: 0.8rem; color: #666; border-top: 1px solid #eee; padding-top: 20px; }
+        footer { margin-top: 50px; font-size: 0.85rem; color: #555; border-top: 1px solid #eee; padding-top: 20px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <span class="offline-badge">OFFLINE-FIRST ARCHITECTURE</span>
     <h1>MyFinote Privacy Policy</h1>
-    <p>This Privacy Policy explains how MyFinote ("we", "our", or "us") collects, uses, and protects your personal information. By using MyFinote, you agree to the practices described in this policy.</p>
+    
+    <p>This Privacy Policy explains how MyFinote ("we", "our", or "us") collects, uses, and protects your personal information when you use our mobile application. By using MyFinote, you agree to the practices described in this policy.</p>
 
     <h2>1. Information We Collect</h2>
-    <p><strong>Financial Data:</strong> Budget names, transaction records, and expense categories are stored <strong>exclusively on your device</strong> in a local SQLite database. This data never leaves your device unless you explicitly use the Backup & Restore feature.</p>
-    
-    <h2>2. Data Storage & Security</h2>
-    <p>All financial data is stored locally using encrypted storage. We do not upload this data to any server. We use Firebase Authentication for secure identity verification only.</p>
+    <ul>
+        <li><strong>Personal Information:</strong> When you create an account, we may collect your name, email address, and country of residence.</li>
+        <li><strong>Financial Data:</strong> Budgets, transactions, income records, bills, lend & owe records, notes, and custom categories you create are stored <strong>exclusively on your device</strong> in a local SQLite database. This data never leaves your device unless you explicitly use the Backup & Restore feature or the Google Drive Backup feature.</li>
+        <li><strong>Income Data:</strong> Income entries you log (source, amount, date, notes) are stored locally on your device and are used solely to calculate net savings, income vs. expense comparisons, and financial summaries within the app.</li>
+        <li><strong>Google Drive Data:</strong> If you choose to enable Google Drive Backup, the app requests access to your Google Drive account using OAuth 2.0. We request the minimum required scope (<code>drive.file</code>) — this grants access only to files created by MyFinote in your Drive, not to your entire Drive. Your backup file is uploaded directly from your device to your personal Google Drive account; we do not store or access this file on our servers.</li>
+        <li><strong>Device Information:</strong> We may collect anonymised device identifiers, operating system version, and app version for crash reporting and performance monitoring.</li>
+        <li><strong>Usage Data:</strong> Aggregated, anonymised analytics (e.g., feature usage frequency) may be collected to improve the app experience.</li>
+        <li><strong>Biometric Data:</strong> If you enable the Biometric App Lock, verification is handled entirely by your device operating system. We do not collect or store any biometric data.</li>
+    </ul>
 
-    <h2>3. Third-Party Services</h2>
-    <p>We use Firebase (Google LLC) for optional sign-in and anonymized crash reporting. See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> for details.</p>
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+        <li>To create and manage your account and user profile.</li>
+        <li>To provide, maintain, and improve all core features of MyFinote — budgets, transactions, income tracking, bills, lend & owe records, notes, categories, and financial analysis.</li>
+        <li>To calculate and display income vs. expense summaries, net savings, and financial health scores using the income and expense data you enter.</li>
+        <li>To enable Google Drive Backup, where your encrypted backup file is uploaded to your own Google Drive account on your request. We do not access, read, or retain the contents of your backup file.</li>
+        <li>To send you on-device notifications (daily reminders, budget alerts, inactivity reminders, backup reminders) — only when you enable them in Settings.</li>
+        <li>To personalise your experience — such as pre-selecting your currency and language based on your country.</li>
+        <li>To comply with applicable laws and regulations.</li>
+    </ul>
+
+    <h2>3. Data Storage & Security</h2>
+    <ul>
+        <li>All your financial data — including budgets (Monthly, Event, Trip, Custom), transactions, income records, recurring expenses, bills & payments, lend & owe records, notes, and custom categories — is stored locally on your device using SQLite.</li>
+        <li><strong>Local Backup:</strong> Backup files created via the local Backup & Restore feature are encrypted with a password you set. Without this password the backup cannot be decrypted or restored.</li>
+        <li><strong>Google Drive Backup:</strong> When you use Google Drive Backup, the encrypted backup file is transmitted securely over HTTPS directly to your Google Drive account using Google's APIs. MyFinote does not retain a copy of this file on any of our servers. The file is only accessible by you through your Google account.</li>
+        <li>We strongly recommend using either the local Backup & Restore feature or Google Drive Backup regularly to safeguard your data against device loss or reinstallation.</li>
+        <li>If you enable the Biometric App Lock, access to the app is additionally protected by your device biometric or PIN authentication.</li>
+    </ul>
+
+    <h2>4. Third-Party Services</h2>
+    <ul>
+        <li><strong>Authentication:</strong> We use Firebase Authentication (Google LLC) for optional email/password login, Google Sign-In, and Apple Sign-In. Please review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+        <li><strong>Google Drive API:</strong> If you enable Google Drive Backup, we use the Google Drive API to upload and manage backup files in your personal Google Drive. Access is granted via OAuth 2.0 using only the <code>drive.file</code> scope (limited to files created by this app). Please review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+        <li><strong>Crash Reporting:</strong> We may use Firebase Crashlytics to collect anonymised crash reports to improve app stability.</li>
+        <li>We do not sell, rent, or share your personal information with third parties for their marketing purposes.</li>
+    </ul>
+
+    <h2>5. Guest Mode</h2>
+    <ul>
+        <li>MyFinote can be used without an account in "Guest Mode." In Guest Mode, all data is stored only on your device and is not linked to any user account.</li>
+        <li>Google Drive Backup requires a signed-in Google account and is not available in Guest Mode.</li>
+        <li>If you later sign in or create an account, your guest data remains on your device and is not automatically migrated to the new account.</li>
+    </ul>
+
+    <h2>6. Lend & Owe — Data Handling</h2>
+    <ul>
+        <li>The Lend & Owe feature lets you record money lent to or borrowed from individuals. Records include the person's name, amount, date, description, and settlement status.</li>
+        <li>All lend & owe records — including partial payments, settlement history, and net balance computations — are stored entirely on your device and are never transmitted to our servers.</li>
+        <li>These records are for personal reference only and do not constitute legally binding financial agreements.</li>
+        <li>Person names and contact references you enter are stored locally and are not used for any purpose other than displaying your records within the app.</li>
+    </ul>
+
+    <h2>7. Data Retention</h2>
+    <ul>
+        <li>Your locally stored data is retained on your device until you uninstall the app or delete it manually.</li>
+        <li>Google Drive backup files are retained in your Google Drive until you manually delete them. We have no control over files stored in your Google Drive.</li>
+        <li>If you revoke Google Drive access from your Google Account settings, the app will no longer be able to upload or access backup files in your Drive.</li>
+        <li>If you delete your account, all associated server-side data (such as authentication credentials) will be permanently deleted within 30 days.</li>
+        <li>Locally stored data (budgets, transactions, income records, notes, lend & owe records, bills, categories) is not affected by account deletion unless you also uninstall the app.</li>
+    </ul>
+
+    <h2>8. Your Rights</h2>
+    <ul>
+        <li><strong>Access:</strong> You may request a copy of any personal data we hold about you.</li>
+        <li><strong>Correction:</strong> You may update your profile information (name, email, country, currency) at any time in Settings → Update Profile.</li>
+        <li><strong>Deletion:</strong> You may delete your account and all associated server-side data by contacting us. You may also revoke Google Drive access at any time via your Google Account settings.</li>
+        <li><strong>Portability:</strong> You can export all your financial data (including income records and lend & owe history) using the local Backup & Restore feature or Google Drive Backup (password-protected encrypted format).</li>
+        <li><strong>Opt-out:</strong> You can disable any or all notifications at any time from Settings → Notifications & Reminders.</li>
+        <li><strong>Google Drive Access:</strong> You can revoke Google Drive access at any time from your Google Account → Security → Third-party apps. This will prevent future backups but will not delete previously uploaded backup files.</li>
+        <li><strong>App Lock:</strong> You can enable or disable the Biometric App Lock at any time from Settings → Security.</li>
+    </ul>
+
+    <h2>9. Children's Privacy</h2>
+    <p>MyFinote is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe your child has provided us with personal information, please contact us immediately.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by displaying a notice within the app or by sending an email to the address associated with your account.</p>
+    <p>Your continued use of MyFinote after any changes constitutes your acceptance of the updated policy.</p>
+
+    <h2>11. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at: <a href="mailto:support.myfinote@gmail.com">support.myfinote@gmail.com</a></p>
 
     <footer>
-        <p>Last Updated: May 2026</p>
+        <p>Last Updated: June 26, 2026</p>
         <p>Contact: support.myfinote@gmail.com</p>
     </footer>
 </body>
